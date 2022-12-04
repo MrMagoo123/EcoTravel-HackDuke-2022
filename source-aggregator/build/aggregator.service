@@ -1,0 +1,16 @@
+[Unit]
+Description=Checkouts
+After=network.target
+StartLimitIntervalSec=5
+StartLimitBurst=5
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15
+WorkingDirectory=/home/administrator/build/
+ExecStart=/home/administrator/build/debian_build
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=65536
